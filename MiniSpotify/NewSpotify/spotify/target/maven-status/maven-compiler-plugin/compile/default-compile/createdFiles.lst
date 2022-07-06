@@ -1,0 +1,12 @@
+com/rest/spotify/repository/UserRepository.class
+com/rest/spotify/service/utils/DateValidator.class
+com/rest/spotify/SpotifyApplication.class
+com/rest/spotify/domain/entity/Album.class
+com/rest/spotify/domain/entity/Song.class
+com/rest/spotify/domain/entity/Playlist.class
+com/rest/spotify/domain/entity/Artist.class
+com/rest/spotify/domain/dto/UserDTO.class
+com/rest/spotify/domain/entity/User.class
+com/rest/spotify/service/UserService.class
+com/rest/spotify/mapper/UserMapper.class
+com/rest/spotify/domain/enums/StatusEnum.class

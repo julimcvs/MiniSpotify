@@ -1,0 +1,12 @@
+/home/julio/Spotify/MiniSpotify/NewSpotify/spotify/src/main/java/com/rest/spotify/domain/entity/User.java
+/home/julio/Spotify/MiniSpotify/NewSpotify/spotify/src/main/java/com/rest/spotify/repository/UserRepository.java
+/home/julio/Spotify/MiniSpotify/NewSpotify/spotify/src/main/java/com/rest/spotify/domain/entity/Song.java
+/home/julio/Spotify/MiniSpotify/NewSpotify/spotify/src/main/java/com/rest/spotify/mapper/UserMapper.java
+/home/julio/Spotify/MiniSpotify/NewSpotify/spotify/src/main/java/com/rest/spotify/service/UserService.java
+/home/julio/Spotify/MiniSpotify/NewSpotify/spotify/src/main/java/com/rest/spotify/SpotifyApplication.java
+/home/julio/Spotify/MiniSpotify/NewSpotify/spotify/src/main/java/com/rest/spotify/domain/entity/Album.java
+/home/julio/Spotify/MiniSpotify/NewSpotify/spotify/src/main/java/com/rest/spotify/domain/entity/Playlist.java
+/home/julio/Spotify/MiniSpotify/NewSpotify/spotify/src/main/java/com/rest/spotify/service/utils/DateValidator.java
+/home/julio/Spotify/MiniSpotify/NewSpotify/spotify/src/main/java/com/rest/spotify/domain/dto/UserDTO.java
+/home/julio/Spotify/MiniSpotify/NewSpotify/spotify/src/main/java/com/rest/spotify/domain/entity/Artist.java
+/home/julio/Spotify/MiniSpotify/NewSpotify/spotify/src/main/java/com/rest/spotify/domain/enums/StatusEnum.java
