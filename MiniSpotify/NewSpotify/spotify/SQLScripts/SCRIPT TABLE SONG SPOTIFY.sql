@@ -4,6 +4,8 @@ CREATE TABLE tb_song
     name varchar(50) not null,
     mp3_file bytea not null,
     release_date varchar(50) not null,
+    picture bytea not null,
+    kind varchar(50) not null,
     id_album numeric not null constraint fk_album references tb_album(id),
     id_artist numeric not null constraint fk_artist_song references tb_artist(id),
     status varchar(10) not null constraint song_status check ( status in ('ACTIVE', 'INACTIVE') )

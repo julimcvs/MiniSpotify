@@ -32,10 +32,10 @@ public class Artist implements Serializable {
     @Column(name = "twitter_link", nullable = false)
     private String twitterLink;
 
-    @Column(name = "twitter_link", nullable = false)
+    @Column(name = "instagram_link", nullable = false)
     private String instagramLink;
 
-    @Column(name = "twitter_link", nullable = false)
+    @Column(name = "facebook_link", nullable = false)
     private String facebookLink;
 
     @Column(name = "picture", nullable = false)

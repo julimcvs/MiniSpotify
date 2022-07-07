@@ -20,7 +20,7 @@ public class UserService {
     private final UserMapper mapper;
 
     public UserBasicDTO getUserById(Long id) {
-        return mapper.toBasicDto(repository.findById(id).get());
+        return mapper.toBasicDto(repository.findById(id).orElseThrow(()->new RuntimeException("O usuário não foi encontrado.")));
     }
 
     public UserBasicDTO saveUser(UserDTO dto) {

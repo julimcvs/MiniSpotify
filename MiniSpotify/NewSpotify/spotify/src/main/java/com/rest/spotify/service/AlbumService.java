@@ -1,9 +1,9 @@
 package com.rest.spotify.service;
 
-import com.rest.spotify.domain.dto.AlbumBasicDTO;
 import com.rest.spotify.domain.dto.AlbumDTO;
+import com.rest.spotify.domain.dto.BasicDTO;
+import com.rest.spotify.domain.dto.UserBasicDTO;
 import com.rest.spotify.domain.entity.Album;
-import com.rest.spotify.domain.entity.Artist;
 import com.rest.spotify.domain.enums.StatusEnum;
 import com.rest.spotify.mapper.AlbumMapper;
 import com.rest.spotify.repository.AlbumRepository;
@@ -19,7 +19,11 @@ public class AlbumService {
     private final AlbumRepository repository;
     private final AlbumMapper mapper;
 
-    public AlbumBasicDTO save(AlbumDTO dto, MultipartFile picture) throws IOException {
+    public AlbumDTO getAlbumById(Long id) {
+        return mapper.toDto(repository.findById(id).orElseThrow(()->new RuntimeException("O album não foi encontrado.")));
+    }
+
+    public BasicDTO save(AlbumDTO dto, MultipartFile picture) throws IOException {
         Album entity = mapper.toEntity(dto);
         if(dto.getId() != null) {
             updateAlbum(dto);

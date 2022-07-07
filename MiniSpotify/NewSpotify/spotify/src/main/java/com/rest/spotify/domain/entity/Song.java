@@ -41,6 +41,10 @@ public class Song implements Serializable {
     @Column(name = "kind", nullable = false)
     private KindEnum kind;
 
+    @Column(name = "picture", nullable = false)
+    @Lob
+    private byte[] picture;
+
     @ManyToOne(fetch = FetchType.LAZY)
     private Album album;
 

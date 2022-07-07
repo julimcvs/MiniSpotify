@@ -3,6 +3,7 @@ CREATE TABLE tb_album
     id numeric constraint pk_album primary key,
     name varchar(50) not null,
     release_date varchar(50) not null,
+    picture bytea not null,
     id_artist numeric not null constraint fk_artist_album references tb_artist(id),
     status varchar(10) not null constraint album_status check ( status in ('ACTIVE', 'INACTIVE') )
 );
