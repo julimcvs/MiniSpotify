@@ -45,6 +45,9 @@ public class Song implements Serializable {
     @Lob
     private byte[] picture;
 
+    @Column(name = "location", nullable = false)
+    private String location;
+
     @ManyToOne(fetch = FetchType.LAZY)
     private Album album;
 

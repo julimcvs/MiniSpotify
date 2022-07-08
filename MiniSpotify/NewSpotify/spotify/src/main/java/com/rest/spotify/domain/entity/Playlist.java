@@ -22,23 +22,15 @@ import java.util.Set;
 public class Playlist implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    @ManyToMany
+    @JoinTable(name = "tb_playlist_song", joinColumns = @JoinColumn(name = "playlist_id"), inverseJoinColumns = @JoinColumn(name = "song_id"))
+    Set<Song> playlistSongs;
     @Id
     @Column(name = "id", nullable = false)
     private Long id;
-
     @Column(name = "name", nullable = false)
     private String nome;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tb_user.id", nullable = false)
     private User user;
-
-    @ManyToMany
-    @JoinTable(
-            name = "tb_playlist_song",
-            joinColumns = @JoinColumn(name = "playlist_id"),
-            inverseJoinColumns = @JoinColumn(name = "song_id")
-    )
-    Set<Song> playlistSongs;
 }

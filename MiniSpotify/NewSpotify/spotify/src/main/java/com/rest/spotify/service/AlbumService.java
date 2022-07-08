@@ -2,7 +2,6 @@ package com.rest.spotify.service;
 
 import com.rest.spotify.domain.dto.AlbumDTO;
 import com.rest.spotify.domain.dto.BasicDTO;
-import com.rest.spotify.domain.dto.UserBasicDTO;
 import com.rest.spotify.domain.entity.Album;
 import com.rest.spotify.domain.enums.StatusEnum;
 import com.rest.spotify.mapper.AlbumMapper;
@@ -20,12 +19,12 @@ public class AlbumService {
     private final AlbumMapper mapper;
 
     public AlbumDTO getAlbumById(Long id) {
-        return mapper.toDto(repository.findById(id).orElseThrow(()->new RuntimeException("O album não foi encontrado.")));
+        return mapper.toDto(repository.findById(id).orElseThrow(() -> new RuntimeException("O album não foi encontrado.")));
     }
 
     public BasicDTO save(AlbumDTO dto, MultipartFile picture) throws IOException {
         Album entity = mapper.toEntity(dto);
-        if(dto.getId() != null) {
+        if (dto.getId() != null) {
             updateAlbum(dto);
         }
         entity.setPicture(picture.getBytes());
@@ -35,8 +34,8 @@ public class AlbumService {
     }
 
     private void updateAlbum(AlbumDTO dto) {
-        Album entity = repository.findById(dto.getId()).orElseThrow(()->new RuntimeException("Album não foi encontrado"));
-        if(entity.getStatus()!=StatusEnum.ACTIVE) {
+        Album entity = repository.findById(dto.getId()).orElseThrow(() -> new RuntimeException("Album não foi encontrado"));
+        if (entity.getStatus() != StatusEnum.ACTIVE) {
             throw new RuntimeException("Album encontra-se inativo");
         }
     }

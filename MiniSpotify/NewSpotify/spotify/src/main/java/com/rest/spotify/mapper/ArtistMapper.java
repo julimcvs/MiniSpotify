@@ -8,6 +8,8 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface ArtistMapper {
     Artist toEntity(ArtistDTO dto);
+
     ArtistDTO toDto(Artist entity);
+
     BasicDTO toBasicDto(Artist entity);
 }

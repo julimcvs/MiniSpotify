@@ -8,6 +8,8 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface AlbumMapper {
     Album toEntity(AlbumDTO dto);
+
     AlbumDTO toDto(Album entity);
+
     BasicDTO toBasicDto(Album entity);
 }

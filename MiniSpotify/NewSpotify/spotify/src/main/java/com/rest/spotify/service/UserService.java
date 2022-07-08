@@ -20,14 +20,14 @@ public class UserService {
     private final UserMapper mapper;
 
     public UserBasicDTO getUserById(Long id) {
-        return mapper.toBasicDto(repository.findById(id).orElseThrow(()->new RuntimeException("O usuário não foi encontrado.")));
+        return mapper.toBasicDto(repository.findById(id).orElseThrow(() -> new RuntimeException("O usuário não foi encontrado.")));
     }
 
     public UserBasicDTO saveUser(UserDTO dto) {
-        if(DateValidator.isValidDate(dto.getBirthDate())){
+        if (DateValidator.isValidDate(dto.getBirthDate())) {
             throw new RuntimeException("Esta data não é valida.");
         }
-        if(dto.getId()!=null) updateUser(dto);
+        if (dto.getId() != null) updateUser(dto);
         User entity = mapper.toEntity(dto);
         entity.setStatus(StatusEnum.ACTIVE);
         entity = repository.save(entity);
@@ -35,8 +35,8 @@ public class UserService {
     }
 
     private void updateUser(UserDTO dto) {
-        User user = repository.findById(dto.getId()).orElseThrow(()->new RuntimeException("Usuário não encontrado."));
-        if(user.getStatus()!= StatusEnum.ACTIVE) {
+        User user = repository.findById(dto.getId()).orElseThrow(() -> new RuntimeException("Usuário não encontrado."));
+        if (user.getStatus() != StatusEnum.ACTIVE) {
             throw new RuntimeException("O usuário encontra-se inativo.");
         }
     }

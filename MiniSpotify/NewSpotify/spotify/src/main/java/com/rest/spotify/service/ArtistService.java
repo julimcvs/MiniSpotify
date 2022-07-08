@@ -19,12 +19,12 @@ public class ArtistService {
     private final ArtistMapper mapper;
 
     public ArtistDTO getArtistById(Long id) {
-        return mapper.toDto(repository.findById(id).orElseThrow(()->new RuntimeException("O artista não foi encontrado.")));
+        return mapper.toDto(repository.findById(id).orElseThrow(() -> new RuntimeException("O artista não foi encontrado.")));
     }
 
     public BasicDTO save(ArtistDTO dto, MultipartFile picture) throws IOException {
         Artist entity = mapper.toEntity(dto);
-        if(dto.getId() != null) {
+        if (dto.getId() != null) {
             updateArtist(dto);
         }
         entity.setPicture(picture.getBytes());
@@ -34,8 +34,8 @@ public class ArtistService {
     }
 
     private void updateArtist(ArtistDTO dto) {
-        Artist entity = repository.findById(dto.getId()).orElseThrow(()->new RuntimeException("O artista não existe."));
-        if(entity.getStatus()!= StatusEnum.ACTIVE) {
+        Artist entity = repository.findById(dto.getId()).orElseThrow(() -> new RuntimeException("O artista não existe."));
+        if (entity.getStatus() != StatusEnum.ACTIVE) {
             throw new RuntimeException("O artista encontra-se inativo.");
         }
     }
